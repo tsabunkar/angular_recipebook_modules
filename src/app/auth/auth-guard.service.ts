@@ -11,5 +11,5 @@ export class AuthGuard implements CanActivate {
         return this.authService.isUserAuthenticated();
     }
 
-    //this gaurd is used to protect / does not allow unauthorized user to create or edit a recipe
+    // this gaurd is used to protect / does not allow unauthorized user to create or edit a recipe
 }

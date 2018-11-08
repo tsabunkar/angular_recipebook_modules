@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from "@angular/router";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -46,11 +45,12 @@ import { AuthGuard } from './auth/auth-guard.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,//template-driven forms      
-    ReactiveFormsModule,//Reactive Forms
+    FormsModule, // template-driven forms
+    ReactiveFormsModule, // Reactive Forms
     HttpClientModule
   ],
-  providers: [ShoppingListService, RecipeService, RecipeStorageBackendService, AuthService, AuthGuard],
+  providers: [ShoppingListService, RecipeService, RecipeStorageBackendService,
+    AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,11 +11,10 @@ export class SigninComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  @ViewChild('FormElement') singinForm: NgForm;
+
   ngOnInit() {
   }
-
-
-  @ViewChild('FormElement') singinForm: NgForm;
 
   onSignIn() {
     const email = this.singinForm.value.email;

@@ -14,17 +14,16 @@ export class RecipeDetailsComponent implements OnInit {
     , private router: Router) { }
 
 
+  recipeObj: Recipe;
+  recipeid: number;
 
   // @Input('detailededRecipeFromP2C') recipeObj: Recipe;
 
   onClickOfAddIngredientToShoppingList() {
     this.recipeService.addIngredientToShoppingList(this.recipeObj.ingredients);
-    //ingredients -> is an array of ingredient elements
+    // ingredients -> is an array of ingredient elements
   }
 
-
-  recipeObj: Recipe;
-  recipeid: number;
 
   ngOnInit() {
     // const fetchingId = this.activatedRoute.snapshot.params["myid"];
@@ -32,20 +31,20 @@ export class RecipeDetailsComponent implements OnInit {
       console.log('route parmas value', param);
       console.log(+param['myid']);
       this.recipeid = +param['myid'];
-      this.recipeObj = this.recipeService.getRecipeDetailsFromId(this.recipeid)
-    })
+      this.recipeObj = this.recipeService.getRecipeDetailsFromId(this.recipeid);
+    });
   }
 
   onEditRecipe() {
     // this.router.navigate(['edit'], { relativeTo: this.activatedRoute });
-    //!alternative logic :)
-    this.router.navigate(['../', this.recipeid, 'edit'], { relativeTo: this.activatedRoute })
+    // !alternative logic :)
+    this.router.navigate(['../', this.recipeid, 'edit'], { relativeTo: this.activatedRoute });
   }
 
   onDeleteRecipe() {
-    let index = this.recipeid;
+    const index = this.recipeid;
     this.recipeService.deleteRecipeItem(index);
-    this.router.navigate(['/recipes'])
+    this.router.navigate(['/recipes']);
   }
 
 }

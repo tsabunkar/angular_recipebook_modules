@@ -1,6 +1,6 @@
-import { Ingredient } from "../../shared/models/ingredient.model";
+import { Ingredient } from '../../shared/models/ingredient.model';
 
-export class Recipe {//blueprint of the Object
+export class Recipe {// blueprint of the Object
     public name: string;
     public description: string;
     public imagePath: string;

@@ -25,14 +25,14 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         })
     }
    */
-  //!using subject instead of emitting customEvent
+  // !using subject instead of emitting customEvent
   ngOnInit() {
     // this.ingredientsArray.push(this.ingredientObj1, this.ingredientObj2)
     this.ingredientsArray = this.shoppingListService.getIngredients();
     this.mysubscription = this.shoppingListService.ingredientElementAddedToIngredientArray_CustomSubject
       .subscribe((ingredEle: Ingredient[]) => {
-        this.ingredientsArray = ingredEle
-      })
+        this.ingredientsArray = ingredEle;
+      });
   }
 
   /*   ingredientObj1: Ingredient = new Ingredient('Laptop', 100000);
@@ -42,11 +42,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
      this.ingredientsArray.push(event)
    } */
 
-  //*unsubscribing the custom created subject or Observable
+  // *unsubscribing the custom created subject or Observable
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.mysubscription.unsubscribe();//this will prevent any memory leak, whil creating own subject/observable
+    // Called once, before the instance is destroyed.
+    // Add 'implements OnDestroy' to the class.
+    this.mysubscription.unsubscribe(); // this will prevent any memory leak, whil creating own subject/observable
   }
 
   onEditItem(index: number) {

@@ -7,7 +7,7 @@ import { RecipeService } from './recipe-service/recipe.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
   // providers: [RecipeService]//All the child components of this RecipeComponent will have same instance of RecipeService
-  //service
+  // service
 })
 export class RecipeComponent implements OnInit {
 
@@ -24,17 +24,17 @@ export class RecipeComponent implements OnInit {
   // detailedRecipeElementSend2Child: Recipe
 
 
-  /* 
-    detailedRecipeELementRxedAtParent(detailedRecipeELement: Recipe) { //detailedRecipeELement -> Recieved 
+  /*
+    detailedRecipeELementRxedAtParent(detailedRecipeELement: Recipe) { //detailedRecipeELement -> Recieved
       //from child Comp (RecipeListComponent) to Parent Compo (RecipeComponent)
-  
+
       this.detailedRecipeElementSend2Child = detailedRecipeELement
     } */
 
 
 
 
-  //  ###################2nd way of doing above logic#################################### 
+  //  ###################2nd way of doing above logic####################################
 
   // detailedRecipeELementRxedAtParentProperty: Recipe
 

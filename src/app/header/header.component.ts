@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() { }
     /*     @Output() customeChild_ClickedEvent = new EventEmitter<string>();
-    
+
         OnClickOfTab(myVara: string) {
             this.customeChild_ClickedEvent.emit(myVara);
         } */
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
                 (err) => {
                     console.log(err);
                 }
-            )
+            );
     }
 
     onFetchData() {

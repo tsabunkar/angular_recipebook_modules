@@ -12,8 +12,8 @@ export class RecipeService {
 
     recipeChangedDOM_customEvent = new Subject<Recipe[]>();
 
-    //making this recipesArray as private, so that this property will be encapsulated from outside 
-    /* 
+    // making this recipesArray as private, so that this property will be encapsulated from outside
+    /*
         private recipesArray: Recipe[] = [
             new Recipe('Pasta', 'Pasta dish is made of sunfest pasta',
                 'https://images.media-allrecipes.com/images/56589.png',
@@ -31,22 +31,22 @@ export class RecipeService {
                     new Ingredient('green piece', 90)
                 ])
         ];
-    
+
      */
     private recipesArray: Recipe[] = [];
-    //getters
+    // getters
     getRecipe(): Recipe[] {
         return this.recipesArray.slice();
-        //!slice() -> we only get copy of this recipesArray, not the actual array
+        // !slice() -> we only get copy of this recipesArray, not the actual array
     }
 
     addIngredientToShoppingList(ingredientArrVal: Ingredient[]) {
-        this.shoppingListService.addIngredientsArrayToExistingIngredientArrayInShoppingList(ingredientArrVal)
+        this.shoppingListService.addIngredientsArrayToExistingIngredientArrayInShoppingList(ingredientArrVal);
     }
 
     getRecipeDetailsFromId(index: number) {
         // return this.recipesArray.slice()[index]
-        return this.recipesArray[index]
+        return this.recipesArray[index];
     }
 
     addNewRecipeOnFormSubmission(recipObj: Recipe) {
@@ -55,7 +55,7 @@ export class RecipeService {
     }
 
     updateRecipeOnFormSubmission(index: number, recipeObjToUpdate: Recipe) {
-        this.recipesArray[index] = recipeObjToUpdate
+        this.recipesArray[index] = recipeObjToUpdate;
         this.recipeChangedDOM_customEvent.next(this.recipesArray.slice());
     }
 
@@ -66,6 +66,6 @@ export class RecipeService {
 
     setRecipesArray(recipesArrayFromBackend: Recipe[]) {
         this.recipesArray = recipesArrayFromBackend;
-        this.recipeChangedDOM_customEvent.next(this.recipesArray.slice())
+        this.recipeChangedDOM_customEvent.next(this.recipesArray.slice());
     }
 }
