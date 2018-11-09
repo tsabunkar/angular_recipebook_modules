@@ -36,7 +36,7 @@
           >Logout</a>
         </li>
 
-        <li class="dropdown" dropdown_customedirective *ngIf="authService.isUserAuthenticated()">
+        <li class="dropdown" appDropDownCustomeDirective *ngIf="authService.isUserAuthenticated()">
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage
             <span class="caret"></span>
           </a>

@@ -8,13 +8,14 @@ import { AuthService } from '../auth-service/auth-service.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  @ViewChild('FormElement') singupForm: NgForm;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  @ViewChild('FormElement') singupForm: NgForm;
+
 
 
   onSignUp() {

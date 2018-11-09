@@ -24,30 +24,33 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth-service/auth-service.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { RecipesModule } from './recipe/recipes.module';
+import { SharedModule } from './shared/shared.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipeComponent,
-    RecipeListComponent,
-    RecipeDetailsComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     FooterComponent,
-    DropDownCutomDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    SignupComponent,
-    SigninComponent
+    // DropDownCutomDirective, //made this directive as -> shared module
   ],
   imports: [
     BrowserModule,
+    // BrowserModule is written in app.module.ts -> this module contains CommonModule and other additional features
+    // which might be used when application is loaded, So we should only is use BrowserModule in App Module(root module)
+    // and CommonModule in the feature module
+
     AppRoutingModule,
+    RecipesModule,
     FormsModule, // template-driven forms
-    ReactiveFormsModule, // Reactive Forms
-    HttpClientModule
+    // ReactiveFormsModule, // Reactive Forms
+    HttpClientModule,
+    SharedModule,
+    ShoppingListModule,
+    AuthModule
+
   ],
   providers: [ShoppingListService, RecipeService, RecipeStorageBackendService,
     AuthService, AuthGuard],

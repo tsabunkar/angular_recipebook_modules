@@ -106,3 +106,15 @@ this can be done by changing the rule i.e-
 }
 
 -------------------------------------------------------------------------------------------------------
+   CommonModule, // this commonModule contains all the common features like - *ngFor,*ngIf,etc
+        // So this module will be generally imported in imports array for featue module
+        // BrowserModule is written in app.module.ts -> this module contains CommonModule and other additional features
+        // which might be used when application is loaded, So we should only is use BrowserModule in App Module(root module)
+        // and CommonModule in the feature module
+
+
+-------------------------------------------------------------------------------------------------------
+*) We must not declare same Component, Pipe and Directives in two or more module
+*) We can provide same Service in two or more modules
+*) We can imports same module in two or more modules
+So never duplicate the declartions (in muliple modules)

@@ -1,10 +1,10 @@
 import { Directive, HostBinding, Input, HostListener } from '@angular/core';
 
-@Directive({ selector: '[dropdown_customedirective]' })
+@Directive({ selector: '[appDropDownCustomeDirective]' })
 export class DropDownCutomDirective {
 
     constructor() { }
-    // This customdirective -> will add css class when an btn event is triggered 
+    // This customdirective -> will add css class when an btn event is triggered
     // and remove the css class when btn event is triggered again
 
     // we will be targeting open css class which is provided by bootstrap
