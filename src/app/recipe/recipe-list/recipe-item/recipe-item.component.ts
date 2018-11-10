@@ -10,6 +10,7 @@ import { RecipeService } from '../../recipe-service/recipe.service';
 export class RecipeItemComponent implements OnInit {
 
   @Input('singleRecipeItemPropBindingfromParnt2Child') recipe: Recipe;
+
   /*
 
     constructor(private recipeService: RecipeService) { } */
