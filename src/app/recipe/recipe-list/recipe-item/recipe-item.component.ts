@@ -9,7 +9,8 @@ import { RecipeService } from '../../recipe-service/recipe.service';
 })
 export class RecipeItemComponent implements OnInit {
 
-  @Input('singleRecipeItemPropBindingfromParnt2Child') recipe: Recipe;
+  // @Input('singleRecipeItemPropBindingfromParnt2Child') recipe: Recipe;
+  @Input('singleRecipeItemPropBindingfromParnt2Child') singleRecipeItemPropBindingfromParnt2Child: Recipe;
 
   /*
 

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, NoPreloading } from '@angular/router';
 
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HomeComponent } from './core/home/home.component';
@@ -31,7 +31,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })],
+    // preloading the lazy loaded routes -> using preloadingStrategy
+    // there r different values for this property i.e- NoPreloading (bydefault), PreloadAllModules, etc
+    // PreloadAllModules -> preload all the modules which r lazyly loaded
     exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -20,7 +20,7 @@
       
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <ng-template [ngIf]="!authService.isUserAuthenticated()">
+        <ng-template [ngIf]="!isUserAuthenticated()">
           <li>
             <a [routerLink]="['/signup']">Singup</a>
           </li>
@@ -32,11 +32,11 @@
         <li>
           <a style="cursor: pointer;"
           (click)="onLogout()"
-          *ngIf="authService.isUserAuthenticated()"
+          *ngIf="isUserAuthenticated()"
           >Logout</a>
         </li>
 
-        <li class="dropdown" appDropDownCustomeDirective *ngIf="authService.isUserAuthenticated()">
+        <li class="dropdown" appDropDownCustomeDirective *ngIf="isUserAuthenticated()">
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage
             <span class="caret"></span>
           </a>

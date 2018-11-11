@@ -121,4 +121,8 @@ export class RecipeEditComponent implements OnInit {
     (<FormArray>this.recipeFormGroup.get('recipeIngredientArrayControl')).removeAt(index);
   }
 
+  getControls() { // this is to resolve --aot errors
+    return (<FormArray>this.recipeFormGroup.get('recipeIngredientArrayControl')).controls;
+  }
+
 }
