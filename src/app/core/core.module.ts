@@ -9,6 +9,9 @@ import { RecipeService } from '../recipe/recipe-service/recipe.service';
 import { RecipeStorageBackendService } from '../shared/server-services/recipe-storage.service';
 import { AuthService } from '../auth/auth-service/auth-service.service';
 import { AuthGuard } from '../auth/auth-guard.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../shared/auth.interceptor';
+import { LoggingInterceptor } from '../shared/logging.interceptor';
 
 @NgModule({
     declarations: [
@@ -30,7 +33,12 @@ import { AuthGuard } from '../auth/auth-guard.service';
         RecipeService,
         RecipeStorageBackendService,
         AuthService,
-        // AuthGuard
+        // AuthGuard,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true }
+        // multi-> tells angular we can have multiple interceptors
+        // Note: order in which we have written the above interceptor, in that order itself
+        // these interceptor will be executed
     ],
 })
 export class CoreModule { }

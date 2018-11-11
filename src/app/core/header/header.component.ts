@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     onSaveData() {
         this.recipeStorageBackendService.storeRecipe()
             .subscribe(
-                (respData: Recipe[]) => {
+                (respData) => {
                     console.log('---subscriber----');
                     console.log(respData);
                 },
